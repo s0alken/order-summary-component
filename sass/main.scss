@@ -1,0 +1,240 @@
+//Colors
+
+//Primary
+
+$pale-blue: hsl(225, 100%, 94%);
+$bright-blue: hsl(245, 75%, 52%);
+
+//Neutral
+
+$very-pale-blue: hsl(225, 100%, 98%);
+$desaturated-blue: hsl(224, 23%, 55%);
+$dark-blue: hsl(223, 47%, 23%);
+$hover-blue: hsl(245, 83%, 68%);
+$white: hsl(0, 0%, 100%);
+
+//MEDIA QUERY
+
+$breakpoint: 31.25em; //500px
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: $pale-blue;
+    background-image: url(../images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media only screen and (max-width: $breakpoint) {
+        background-image: url(../images/pattern-background-mobile.svg);
+    }
+}
+
+.card {
+    width: 45rem;
+    background: $white;
+    box-shadow: 0px 4rem 4rem -2rem rgba(13, 48, 189, 0.151826);
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 0 2.4rem;
+
+    @media only screen and (max-width: $breakpoint) {
+        width: 32.7rem;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &__container {
+        padding: 4.5rem 4.8rem 4.8rem 4.8rem;
+
+        @media only screen and (max-width: $breakpoint) {
+            padding: 3.2rem 2.4rem;
+        }
+    }
+
+    &__heading {
+        font-weight: 900;
+        font-size: 2.8rem;
+        line-height: 3.7rem;
+        text-align: center;
+        color: $dark-blue;
+        margin-bottom: 1.7rem;
+
+        @media only screen and (max-width: $breakpoint) {
+            font-size: 2.2rem;
+            line-height: 2.9rem;
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+
+        text-align: center;
+
+        color: $desaturated-blue;
+
+        margin-bottom: 2rem;
+
+        @media only screen and (max-width: $breakpoint) {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            margin-bottom: 2.4rem;
+        }
+
+    }
+
+    &__plan {
+        background: $very-pale-blue;
+        border-radius: 1.1rem;
+        padding: 2.5rem 2.4rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        margin-bottom: 3.2rem;
+
+        @media only screen and (max-width: $breakpoint) {
+            padding: 1.7rem 1.6rem 1.6rem 1.6rem;
+            margin-bottom: 2.4rem;
+        }
+
+        &-logo {
+            margin-right: 2rem;
+        }
+
+        &-type {
+            display: flex;
+            flex-direction: column;
+            row-gap: .6rem;
+
+            @media only screen and (max-width: $breakpoint) {
+                row-gap: .3rem;
+            }
+        }
+
+        &-period {
+            font-weight: 900;
+            font-size: 1.6rem;
+            line-height: 2.1rem;
+            color: $dark-blue;
+
+            @media only screen and (max-width: $breakpoint) {
+                font-size: 1.4rem;
+                line-height: 1.9rem;
+            }
+        }
+
+        &-price {
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 2.1rem;
+            color: $desaturated-blue;
+
+            @media only screen and (max-width: $breakpoint) {
+                font-size: 1.4rem;
+                line-height: 1.9rem;
+            }
+        }
+    }
+
+    &__btn {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        transition: all .2s;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &--change {
+            font-family: inherit;
+            color: $bright-blue;
+            margin-left: auto;
+
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 1.9rem;
+
+            text-decoration-line: underline;
+
+            @media only screen and (max-width: $breakpoint) {
+                font-size: 1.3rem;
+                line-height: 1.7rem;
+            }
+
+            &:hover {
+                color: $hover-blue;
+            }
+        }
+
+        &--payment {
+            font-family: inherit;
+
+            width: 100%;
+            height: 5rem;
+
+            background-color: $bright-blue;
+
+            font-weight: 900;
+            font-size: 1.5rem;
+            line-height: 2rem;
+
+            color: $white;
+
+            box-shadow: 0px 2rem 2rem rgba(56, 42, 225, 0.190291);
+            border-radius: 1.1rem;
+
+            margin-bottom: 3.2rem;
+
+            @media only screen and (max-width: $breakpoint) {
+                margin-bottom: 2.4rem;;
+            }
+
+            &:hover {
+                background-color: $hover-blue;
+            }
+        }
+
+        &--cancel {
+            font-family: inherit;
+            display: block;
+            font-weight: 900;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            color: $desaturated-blue;
+
+            margin: 0 auto;
+
+            &:hover {
+                color: $dark-blue;
+            }
+        }
+    }
+}
