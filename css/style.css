@@ -80,6 +80,9 @@ body {
         padding: 1.7rem 1.6rem 1.6rem 1.6rem;
         margin-bottom: 2.4rem; } }
     .card__plan-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-right: 2rem; }
     .card__plan-type {
       display: flex;
